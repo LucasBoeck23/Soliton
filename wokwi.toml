@@ -1,0 +1,17 @@
+# Wokwi VS Code Extension — Configuração do projeto Sóliton
+# A extensão lê este arquivo para saber onde encontrar o firmware e o diagrama.
+#
+# Pré-requisitos:
+#   1. Instalar extensão "Wokwi Simulator" no VS Code (ID: wokwi.wokwi-vscode)
+#   2. Compilar o projeto: idf.py build
+#   3. Ctrl+Shift+P → "Wokwi: Start Simulator"
+#
+# Licença Wokwi:
+#   A extensão requer uma licença gratuita (hobby) ou paga.
+#   Na primeira execução, ela pede para fazer login em wokwi.com.
+
+[wokwi]
+version = 1
+firmware = "build/soliton.bin"
+elf = "build/soliton.elf"
+gdbServerPort = 3333

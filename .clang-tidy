@@ -1,0 +1,97 @@
+---
+# Sóliton Project — Clang-Tidy Configuration
+# Enforces naming conventions, readability, and bug-prone pattern detection
+# for embedded C/C++ firmware targeting ESP32-C3.
+#
+# Naming Conventions:
+#   - Functions and variables: snake_case
+#   - Constants and macros: UPPER_SNAKE_CASE
+#   - Include guards: SOLITON_<MODULE>_<FILE>_H (enforced via MacroDefinition UPPER_CASE)
+#   - Typedefs/enums: snake_case with _t suffix
+#   - Static file-scope variables: s_ prefix + snake_case
+
+Checks: >
+  -*,
+  bugprone-*,
+  readability-*,
+  readability-identifier-naming,
+  llvm-header-guard,
+  misc-definitions-in-headers,
+  -readability-magic-numbers,
+  -readability-function-cognitive-complexity,
+  -readability-else-after-return,
+  -readability-isolate-declaration,
+  -readability-avoid-const-params-in-decls,
+  -readability-redundant-declaration,
+  -bugprone-easily-swappable-parameters,
+  -bugprone-narrowing-conversions,
+  -bugprone-reserved-identifier
+
+WarningsAsErrors: ''
+
+HeaderFilterRegex: '.*'
+
+CheckOptions:
+  # --- Functions: snake_case ---
+  - key: readability-identifier-naming.FunctionCase
+    value: lower_case
+
+  # --- Variables: snake_case ---
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+
+  # --- Parameters: snake_case ---
+  - key: readability-identifier-naming.ParameterCase
+    value: lower_case
+
+  # --- Local variables: snake_case ---
+  - key: readability-identifier-naming.LocalVariableCase
+    value: lower_case
+
+  # --- Global variables: snake_case ---
+  - key: readability-identifier-naming.GlobalVariableCase
+    value: lower_case
+
+  # --- Static variables (file-scope): snake_case with s_ prefix ---
+  - key: readability-identifier-naming.StaticVariableCase
+    value: lower_case
+  - key: readability-identifier-naming.StaticVariablePrefix
+    value: 's_'
+
+  # --- Constants: UPPER_SNAKE_CASE ---
+  - key: readability-identifier-naming.ConstantCase
+    value: UPPER_CASE
+
+  # --- Global constants: UPPER_SNAKE_CASE ---
+  - key: readability-identifier-naming.GlobalConstantCase
+    value: UPPER_CASE
+
+  # --- Static constants: UPPER_SNAKE_CASE ---
+  - key: readability-identifier-naming.StaticConstantCase
+    value: UPPER_CASE
+
+  # --- Enum constants: UPPER_SNAKE_CASE ---
+  - key: readability-identifier-naming.EnumConstantCase
+    value: UPPER_CASE
+
+  # --- Macros (includes include guards): UPPER_SNAKE_CASE ---
+  # Include guards must follow: SOLITON_<MODULE>_<FILE>_H
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: UPPER_CASE
+
+  # --- Struct/Typedef: snake_case with _t suffix ---
+  - key: readability-identifier-naming.TypedefCase
+    value: lower_case
+  - key: readability-identifier-naming.TypedefSuffix
+    value: '_t'
+
+  # --- Struct names: snake_case ---
+  - key: readability-identifier-naming.StructCase
+    value: lower_case
+
+  # --- Enum names: snake_case with _t suffix ---
+  - key: readability-identifier-naming.EnumCase
+    value: lower_case
+  - key: readability-identifier-naming.EnumSuffix
+    value: '_t'
+...

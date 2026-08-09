@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "author": "Sóliton Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-c3-devkitm-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-vl53l0x",
+      "id": "tof1",
+      "top": -120,
+      "left": 200,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dfplayer",
+      "id": "dfplayer1",
+      "top": 100,
+      "left": 200,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "motor1",
+      "top": -60,
+      "left": -100,
+      "attrs": {
+        "color": "red",
+        "label": "Motor ERM (PWM)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_bat1",
+      "top": 60,
+      "left": -150,
+      "attrs": {
+        "resistance": "100000",
+        "label": "R1 (100k) - Battery Divider"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_bat2",
+      "top": 100,
+      "left": -150,
+      "attrs": {
+        "resistance": "100000",
+        "label": "R2 (100k) - Battery Divider"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -120,
+      "left": -100,
+      "attrs": {
+        "color": "blue",
+        "label": "User Button"
+      }
+    }
+  ],
+  "connections": [
+    ["esp:4", "tof1:SDA", "green", ["v0"]],
+    ["esp:5", "tof1:SCL", "yellow", ["v0"]],
+    ["esp:3V3", "tof1:VCC", "red", ["v0"]],
+    ["esp:GND.1", "tof1:GND", "black", ["v0"]],
+
+    ["esp:7", "dfplayer1:RX", "orange", ["v0"]],
+    ["esp:8", "dfplayer1:TX", "purple", ["v0"]],
+    ["esp:3V3", "dfplayer1:VCC", "red", ["v0"]],
+    ["esp:GND.2", "dfplayer1:GND", "black", ["v0"]],
+
+    ["esp:6", "motor1:A", "blue", ["v0"]],
+    ["motor1:C", "esp:GND.3", "black", ["v0"]],
+
+    ["esp:3V3", "r_bat1:1", "red", ["v0"]],
+    ["r_bat1:2", "r_bat2:1", "brown", ["v0"]],
+    ["r_bat1:2", "esp:0", "gray", ["v0"]],
+    ["r_bat2:2", "esp:GND.4", "black", ["v0"]],
+
+    ["esp:9", "btn1:1.l", "cyan", ["v0"]],
+    ["btn1:2.l", "esp:GND.5", "black", ["v0"]]
+  ]
+}

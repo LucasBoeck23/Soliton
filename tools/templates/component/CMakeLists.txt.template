@@ -1,0 +1,13 @@
+# components/{{COMPONENT_PATH}}/CMakeLists.txt
+# {{COMPONENT_DESCRIPTION}}
+
+idf_component_register(
+    SRCS {{SRCS}}
+    INCLUDE_DIRS {{INCLUDE_DIRS}}
+    REQUIRES {{REQUIRES}}
+    PRIV_REQUIRES ""
+)
+
+# Layer enforcement: define a camada deste componente para validação de dependências
+# Valores válidos: "hal", "drivers", "modules", "utils", "config"
+set(COMPONENT_LAYER "{{COMPONENT_LAYER}}")

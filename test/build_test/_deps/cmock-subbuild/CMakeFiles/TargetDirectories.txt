@@ -1,0 +1,3 @@
+C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/CMakeFiles/cmock-populate.dir
+C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/CMakeFiles/edit_cache.dir
+C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/CMakeFiles/rebuild_cache.dir

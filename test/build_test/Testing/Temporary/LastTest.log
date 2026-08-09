@@ -1,0 +1,286 @@
+Start testing: Aug 03 23:27 Hora oficial do Brasil
+----------------------------------------------------------
+1/10 Testing: property8_layer_enforcement
+1/10 Test: property8_layer_enforcement
+Command: "C:/Program Files/CMake/bin/cmake.exe" "-P" "C:/Git/Soliton/test/build/test_layer_rules.cmake"
+Directory: C:/Git/Soliton/test/build_test
+"property8_layer_enforcement" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+-- 
+-- === Property 8: Layer dependency enforcement ===
+-- Testing illegal dependencies (expect FATAL_ERROR)...
+--   PASS: modules_to_drivers_vl53l0x
+--   PASS: modules_to_drivers_dfplayer
+--   PASS: modules_to_drivers_battery
+--   PASS: modules_to_drivers_motor_erm
+--   PASS: drivers_to_modules
+--   PASS: drivers_dfplayer_to_modules
+--   PASS: drivers_to_utils
+--   PASS: drivers_battery_to_utils
+--   PASS: drivers_to_other_driver_1
+--   PASS: drivers_to_other_driver_2
+--   PASS: drivers_to_other_driver_3
+--   PASS: hal_to_drivers_vl53l0x
+--   PASS: hal_to_drivers_battery
+--   PASS: hal_to_modules
+--   PASS: utils_to_hal
+--   PASS: utils_to_drivers
+--   PASS: utils_to_modules
+--   PASS: config_to_hal
+--   PASS: config_to_drivers
+--   PASS: config_to_modules
+--   PASS: config_to_utils
+-- 
+-- Testing valid dependencies (expect NO error)...
+--   PASS: modules_to_hal
+--   PASS: modules_to_utils
+--   PASS: modules_to_config
+--   PASS: modules_to_hal_utils_config
+--   PASS: drivers_to_hal
+--   PASS: modules_to_external
+--   PASS: drivers_to_external
+--   PASS: hal_to_external
+--   PASS: utils_to_external
+--   PASS: config_to_external
+-- 
+-- =============================================
+--   Property 8: Layer enforcement — ALL PASSED
+-- =============================================
+<end of output>
+Test time =   1.46 sec
+----------------------------------------------------------
+Test Passed.
+"property8_layer_enforcement" end time: Aug 03 23:27 Hora oficial do Brasil
+"property8_layer_enforcement" time elapsed: 00:00:01
+----------------------------------------------------------
+
+2/10 Testing: property9_layer_declaration
+2/10 Test: property9_layer_declaration
+Command: "C:/Program Files/CMake/bin/cmake.exe" "-P" "C:/Git/Soliton/test/build/test_layer_decl.cmake"
+Directory: C:/Git/Soliton/test/build_test
+"property9_layer_declaration" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+-- Testing check_layer_declaration() — missing COMPONENT_LAYER...
+--   PASS: component without COMPONENT_LAYER is rejected
+-- Testing check_layer_declaration() — valid COMPONENT_LAYER...
+--   PASS: component with COMPONENT_LAYER passes
+-- Testing check_layer_declaration() — external path ignored...
+--   PASS: component outside components/ is not validated
+-- Testing check_layer_declaration() — no CMakeLists.txt ignored...
+--   PASS: component without CMakeLists.txt is ignored
+-- 
+-- =============================================
+--   test_layer_decl.cmake — ALL TESTS PASSED ✓
+-- =============================================
+<end of output>
+Test time =   0.30 sec
+----------------------------------------------------------
+Test Passed.
+"property9_layer_declaration" end time: Aug 03 23:27 Hora oficial do Brasil
+"property9_layer_declaration" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/10 Testing: hal_error_code_uniqueness
+3/10 Test: hal_error_code_uniqueness
+Command: "C:/Git/Soliton/test/build_test/hal/test_error_codes.exe"
+Directory: C:/Git/Soliton/test/build_test/hal
+"hal_error_code_uniqueness" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+C:/Git/Soliton/test/hal/test_error_codes.c:47:test_all_error_codes_are_unique:PASS
+C:/Git/Soliton/test/hal/test_error_codes.c:48:test_hal_err_to_str_returns_valid_strings:PASS
+
+-----------------------
+2 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   0.98 sec
+----------------------------------------------------------
+Test Passed.
+"hal_error_code_uniqueness" end time: Aug 03 23:27 Hora oficial do Brasil
+"hal_error_code_uniqueness" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/10 Testing: hal_mock_call_recording
+4/10 Test: hal_mock_call_recording
+Command: "C:/Git/Soliton/test/build_test/hal/test_mock_recording.exe"
+Directory: C:/Git/Soliton/test/build_test/hal
+"hal_mock_call_recording" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+[PBT] Seed: 1785810442
+C:/Git/Soliton/test/hal/test_mock_recording.c:161:test_property_1_runner:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   0.67 sec
+----------------------------------------------------------
+Test Passed.
+"hal_mock_call_recording" end time: Aug 03 23:27 Hora oficial do Brasil
+"hal_mock_call_recording" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/10 Testing: hal_not_init_guard
+5/10 Test: hal_not_init_guard
+Command: "C:/Git/Soliton/test/build_test/hal/test_not_init_guard.exe"
+Directory: C:/Git/Soliton/test/build_test/hal
+"hal_not_init_guard" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+[PBT] Seed: 1785810443
+C:/Git/Soliton/test/hal/test_not_init_guard.c:200:test_property4_i2c_not_init_guard:PASS
+[PBT] Seed: 1785810443
+C:/Git/Soliton/test/hal/test_not_init_guard.c:201:test_property4_uart_not_init_guard:PASS
+[PBT] Seed: 1785810443
+C:/Git/Soliton/test/hal/test_not_init_guard.c:202:test_property4_pwm_not_init_guard:PASS
+[PBT] Seed: 1785810443
+C:/Git/Soliton/test/hal/test_not_init_guard.c:203:test_property4_adc_not_init_guard:PASS
+[PBT] Seed: 1785810443
+C:/Git/Soliton/test/hal/test_not_init_guard.c:204:test_property4_gpio_not_init_guard:PASS
+
+-----------------------
+5 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   0.66 sec
+----------------------------------------------------------
+Test Passed.
+"hal_not_init_guard" end time: Aug 03 23:27 Hora oficial do Brasil
+"hal_not_init_guard" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/10 Testing: hal_mock_injection_roundtrip
+6/10 Test: hal_mock_injection_roundtrip
+Command: "C:/Git/Soliton/test/build_test/hal/test_mock_injection.exe"
+Directory: C:/Git/Soliton/test/build_test/hal
+"hal_mock_injection_roundtrip" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+[PBT] Seed: 1785810444
+C:/Git/Soliton/test/hal/test_mock_injection.c:145:test_property6_adc_voltage_injection_roundtrip:PASS
+[PBT] Seed: 1785810444
+C:/Git/Soliton/test/hal/test_mock_injection.c:146:test_property6_adc_raw_injection_roundtrip:PASS
+[PBT] Seed: 1785810444
+C:/Git/Soliton/test/hal/test_mock_injection.c:147:test_property6_i2c_read_injection_roundtrip:PASS
+[PBT] Seed: 1785810444
+C:/Git/Soliton/test/hal/test_mock_injection.c:148:test_property6_uart_read_injection_roundtrip:PASS
+
+-----------------------
+4 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   1.03 sec
+----------------------------------------------------------
+Test Passed.
+"hal_mock_injection_roundtrip" end time: Aug 03 23:27 Hora oficial do Brasil
+"hal_mock_injection_roundtrip" time elapsed: 00:00:01
+----------------------------------------------------------
+
+7/10 Testing: hal_mock_error_sim_fidelity
+7/10 Test: hal_mock_error_sim_fidelity
+Command: "C:/Git/Soliton/test/build_test/hal/test_mock_error_sim.exe"
+Directory: C:/Git/Soliton/test/build_test/hal
+"hal_mock_error_sim_fidelity" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+[PBT] Seed: 1785810445
+C:/Git/Soliton/test/hal/test_mock_error_sim.c:183:test_property_7_mock_error_sim_fidelity:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   0.76 sec
+----------------------------------------------------------
+Test Passed.
+"hal_mock_error_sim_fidelity" end time: Aug 03 23:27 Hora oficial do Brasil
+"hal_mock_error_sim_fidelity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/10 Testing: drivers_valid_config_init
+8/10 Test: drivers_valid_config_init
+Command: "C:/Git/Soliton/test/build_test/drivers/test_driver_init.exe"
+Directory: C:/Git/Soliton/test/build_test/drivers
+"drivers_valid_config_init" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+[PBT] Seed: 1785810445
+C:/Git/Soliton/test/drivers/test_driver_init.c:129:test_property_5_vl53l0x:PASS
+[PBT] Seed: 1785810445
+C:/Git/Soliton/test/drivers/test_driver_init.c:130:test_property_5_dfplayer:PASS
+[PBT] Seed: 1785810445
+C:/Git/Soliton/test/drivers/test_driver_init.c:131:test_property_5_motor_erm:PASS
+[PBT] Seed: 1785810445
+C:/Git/Soliton/test/drivers/test_driver_init.c:132:test_property_5_battery:PASS
+
+-----------------------
+4 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"drivers_valid_config_init" end time: Aug 03 23:27 Hora oficial do Brasil
+"drivers_valid_config_init" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/10 Testing: drivers_error_state_isolation
+9/10 Test: drivers_error_state_isolation
+Command: "C:/Git/Soliton/test/build_test/drivers/test_error_isolation.exe"
+Directory: C:/Git/Soliton/test/build_test/drivers
+"drivers_error_state_isolation" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+[PBT] Seed: 1785810445
+C:/Git/Soliton/test/drivers/test_error_isolation.c:194:test_property_3_error_state_isolation:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   0.66 sec
+----------------------------------------------------------
+Test Passed.
+"drivers_error_state_isolation" end time: Aug 03 23:27 Hora oficial do Brasil
+"drivers_error_state_isolation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/10 Testing: driver_stubs
+10/10 Test: driver_stubs
+Command: "C:/Git/Soliton/test/build_test/drivers/test_driver_stubs.exe"
+Directory: C:/Git/Soliton/test/build_test/drivers
+"driver_stubs" start time: Aug 03 23:27 Hora oficial do Brasil
+Output:
+----------------------------------------------------------
+C:/Git/Soliton/test/drivers/test_driver_stubs.c:155:test_vl53l0x_returns_stub_distance:PASS
+C:/Git/Soliton/test/drivers/test_driver_stubs.c:156:test_battery_returns_stub_voltage:PASS
+C:/Git/Soliton/test/drivers/test_driver_stubs.c:157:test_vl53l0x_not_init_guard:PASS
+C:/Git/Soliton/test/drivers/test_driver_stubs.c:158:test_dfplayer_not_init_guard:PASS
+C:/Git/Soliton/test/drivers/test_driver_stubs.c:159:test_motor_erm_not_init_guard:PASS
+C:/Git/Soliton/test/drivers/test_driver_stubs.c:160:test_battery_not_init_guard:PASS
+C:/Git/Soliton/test/drivers/test_driver_stubs.c:161:test_vl53l0x_init_records_hal_call:PASS
+C:/Git/Soliton/test/drivers/test_driver_stubs.c:162:test_dfplayer_init_records_hal_call:PASS
+
+-----------------------
+8 Tests 0 Failures 0 Ignored 
+OK
+<end of output>
+Test time =   0.82 sec
+----------------------------------------------------------
+Test Passed.
+"driver_stubs" end time: Aug 03 23:27 Hora oficial do Brasil
+"driver_stubs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 03 23:27 Hora oficial do Brasil
+
+build =   1.77 sec*proc
+
+layers =   1.77 sec*proc
+
+property =   1.77 sec*proc
+

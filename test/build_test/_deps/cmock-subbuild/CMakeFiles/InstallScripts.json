@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

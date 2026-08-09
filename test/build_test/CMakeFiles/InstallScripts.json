@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Git/Soliton/test/build_test/cmake_install.cmake",
+		"C:/Git/Soliton/test/build_test/_deps/unity-build/cmake_install.cmake",
+		"C:/Git/Soliton/test/build_test/utils/cmake_install.cmake",
+		"C:/Git/Soliton/test/build_test/hal/cmake_install.cmake",
+		"C:/Git/Soliton/test/build_test/drivers/cmake_install.cmake",
+		"C:/Git/Soliton/test/build_test/modules/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

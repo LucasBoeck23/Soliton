@@ -1,0 +1,41 @@
+/**
+ * @file {{FILE_NAME}}.c
+ * @brief Implementação do componente {{COMPONENT_NAME}}.
+ *
+ * TODO: Substituir a implementação stub pela lógica real do componente.
+ * Depende exclusivamente da camada HAL.
+ */
+
+#include "{{HEADER_NAME}}.h"
+#include <stddef.h>
+
+/* Estado interno do componente */
+static uint8_t s_initialized = 0;
+
+hal_err_t {{PREFIX}}_init(const {{PREFIX}}_config_t *config)
+{
+    /* Validar parâmetros */
+    if (config == NULL) {
+        return HAL_ERR_INVALID_PARAM;
+    }
+
+    /* TODO: Inicializar periféricos via HAL */
+
+    s_initialized = 1;
+
+    return HAL_OK;
+}
+
+hal_err_t {{PREFIX}}_deinit(void)
+{
+    /* Guard: verificar se o componente foi inicializado */
+    if (!s_initialized) {
+        return HAL_ERR_NOT_INIT;
+    }
+
+    /* TODO: De-inicializar periféricos via HAL */
+
+    s_initialized = 0;
+
+    return HAL_OK;
+}

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Git/Soliton/test/build_test/_deps/unity-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

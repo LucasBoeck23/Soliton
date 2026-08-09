@@ -1,0 +1,7 @@
+.git
+build
+test/build
+node_modules
+*.bin
+*.elf
+output

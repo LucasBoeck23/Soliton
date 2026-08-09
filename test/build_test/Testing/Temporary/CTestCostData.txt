@@ -1,0 +1,11 @@
+property8_layer_enforcement 3 0.487941
+property9_layer_declaration 2 0.151918
+hal_error_code_uniqueness 1 0.97651
+hal_mock_call_recording 1 0.670678
+hal_not_init_guard 1 0.664163
+hal_mock_injection_roundtrip 1 1.03395
+hal_mock_error_sim_fidelity 1 0.755488
+drivers_valid_config_init 1 0.0242862
+drivers_error_state_isolation 1 0.66383
+driver_stubs 1 0.818183
+---

@@ -1,0 +1,60 @@
+# CMock Configuration — Sóliton Project
+# This file configures CMock for optional auto-generation of mocks from HAL headers.
+# Primary mock strategy uses manual Mock Layer (components/hal/mock/).
+# CMock auto-generation is available for headers where manual mocks are not needed.
+#
+# Usage (requires Ruby):
+#   ruby <cmock_dir>/lib/cmock.rb -o test/cmock_config.yml <header_path>
+
+---
+:cmock:
+  # Output directory for generated mock files
+  :mock_path: build/cmock_mocks
+
+  # Prefix for generated mock filenames (e.g., mock_hal_i2c.c)
+  :mock_prefix: mock_
+
+  # Source header paths to generate mocks from
+  :includes:
+    - ../components/hal/include/hal_i2c.h
+    - ../components/hal/include/hal_pwm.h
+    - ../components/hal/include/hal_uart.h
+    - ../components/hal/include/hal_adc.h
+    - ../components/hal/include/hal_gpio.h
+    - ../components/hal/include/hal_error.h
+
+  # Additional include paths for resolving types in headers
+  :includes_h_pre_header:
+    - ../components/hal/include
+
+  # Plugins for enhanced mock functionality
+  :plugins:
+    - :callback    # Allows registering callback functions for mock calls
+    - :ignore      # Generates _Ignore variants that skip verification
+
+  # Unity framework integration (bundled with CMock fetch)
+  :framework: :unity
+
+  # Enforce strict ordering of expected calls
+  :enforce_strict_ordering: true
+
+  # Treat all functions as mockable (no filtering)
+  :treat_as_void: []
+
+  # When strict ordering is on, fail test on unexpected calls
+  :fail_on_unexpected_calls: true
+
+  # Attributes to strip from function declarations (ESP-IDF specific)
+  :strippables:
+    - __attribute__\(\(.*?\)\)
+
+  # C types that CMock should treat as equivalent to basic types
+  :treat_as:
+    uint8_t: HEX8
+    uint16_t: HEX16
+    uint32_t: HEX32
+    int8_t: INT8
+    int16_t: INT16
+    int32_t: INT32
+    hal_err_t: INT
+    size_t: UINT

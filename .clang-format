@@ -1,0 +1,7 @@
+# Sóliton — Configuração de formatação automática de código
+# Aplica estilo K&R (Attach) baseado em LLVM com indentação de 4 espaços
+
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100
+BreakBeforeBraces: Attach

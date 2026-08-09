@@ -1,0 +1,46 @@
+# .github/workflows/ci.yml
+# Pipeline de Integração Contínua do projeto Sóliton
+# Executa análise estática, build do firmware e testes unitários automaticamente.
+
+name: Sóliton CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    container:
+      image: espressif/idf:v5.1
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cache ESP-IDF tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.espressif
+            build/
+          key: ${{ runner.os }}-idf-${{ hashFiles('sdkconfig.defaults') }}
+          restore-keys: |
+            ${{ runner.os }}-idf-
+
+      - name: Static Analysis - Format Check
+        run: |
+          find components/ -name "*.c" -o -name "*.h" | xargs clang-format --dry-run --Werror
+
+      - name: Static Analysis - Clang-Tidy
+        run: |
+          idf.py build --ccflags="-Werror"
+          find components/ -name "*.c" | xargs clang-tidy -- -I components/hal/include -I components/config/include -I components/utils/include
+
+      - name: Build Firmware
+        run: idf.py build
+
+      - name: Run Unit Tests
+        run: idf.py -T test

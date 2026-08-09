@@ -1,0 +1,28 @@
+#ifndef SOLITON_{{MODULE_UPPER}}_{{FILE_UPPER}}_H
+#define SOLITON_{{MODULE_UPPER}}_{{FILE_UPPER}}_H
+
+#include "hal_error.h"
+#include <stdint.h>
+
+/**
+ * @brief Estrutura de configuração do componente {{COMPONENT_NAME}}.
+ */
+typedef struct {
+    /* TODO: adicionar campos de configuração */
+    uint8_t placeholder;
+} {{PREFIX}}_config_t;
+
+/**
+ * @brief Inicializa o componente {{COMPONENT_NAME}} com a configuração fornecida.
+ * @param config Ponteiro para a estrutura de configuração.
+ * @return HAL_OK em sucesso, código de erro caso contrário.
+ */
+hal_err_t {{PREFIX}}_init(const {{PREFIX}}_config_t *config);
+
+/**
+ * @brief De-inicializa o componente {{COMPONENT_NAME}} e libera recursos.
+ * @return HAL_OK em sucesso, código de erro caso contrário.
+ */
+hal_err_t {{PREFIX}}_deinit(void);
+
+#endif /* SOLITON_{{MODULE_UPPER}}_{{FILE_UPPER}}_H */

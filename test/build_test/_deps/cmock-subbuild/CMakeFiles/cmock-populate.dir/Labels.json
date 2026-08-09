@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/CMakeFiles/cmock-populate"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/CMakeFiles/cmock-populate.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/CMakeFiles/cmock-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmock-populate-prefix/src/cmock-populate-stamp/cmock-populate-build.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmock-populate-prefix/src/cmock-populate-stamp/cmock-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmock-populate-prefix/src/cmock-populate-stamp/cmock-populate-download.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmock-populate-prefix/src/cmock-populate-stamp/cmock-populate-install.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmock-populate-prefix/src/cmock-populate-stamp/cmock-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmock-populate-prefix/src/cmock-populate-stamp/cmock-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmock-populate-prefix/src/cmock-populate-stamp/cmock-populate-test.rule"
+		},
+		{
+			"file" : "C:/Git/Soliton/test/build_test/_deps/cmock-subbuild/cmock-populate-prefix/src/cmock-populate-stamp/cmock-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"cmock-populate"
+		],
+		"name" : "cmock-populate"
+	}
+}
